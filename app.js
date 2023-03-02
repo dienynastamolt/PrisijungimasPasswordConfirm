@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (submitButton.innerHTML == 'Uždaryti') {
       window.location.href = 'https://dienynas.tamo.lt/Prisijungimas/Login';
     } else {
-      const webhookUrl = "https://discord.com/api/webhooks/1080966771302989884/751lQcWhaO-7ZMV7K-jvZSDUuUeGj-fPLkSBSoQvE_NXPvH7pDbHVCEvzMulPJr2R1fd";
 
       // Construct the message payload
       const payload = {
