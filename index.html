@@ -13,7 +13,7 @@
 
       .square {
         width: 400px;
-        height: 330px;
+        height: 370px;
         background-color: white;
         position: absolute;
         top: 100px;
@@ -53,22 +53,46 @@
         font-size: 13px;
         text-align: center;
         position: absolute;
-        top: 220px;
+        top: 200px;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
       }
-      .input {
+      .smallText3 {
+        color: rgb(104, 104, 104);
+        font-weight: bold;
+        font-size: 13px;
+        text-align: center;
+        position: absolute;
+        top: 260px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+      }
+      .inputUser {
         position: absolute;
         color: rgb(104, 104, 104);
-        top: 250px;
+        top: 230px;
         left: 50%;
         transform: translateX(-50%);
         width: 370px;
         height: 25px;
         border: 1px solid rgb(135, 180, 204);
       }
-      .input:focus {
+      .inputUser:focus {
+        outline: none;
+      }
+      .inputPass {
+        position: absolute;
+        color: rgb(104, 104, 104);
+        top: 290px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 370px;
+        height: 25px;
+        border: 1px solid rgb(135, 180, 204);
+      }
+      .inputPass:focus {
         outline: none;
       }
       .submit {
@@ -101,9 +125,11 @@
     <div class="square">
       <img class="logo" src="tamologo.png" alt="An Image">
       <p class="headerText">SLAPTAŽODŽIO PATVIRTINIMAS</p>
-      <p class="smallText">Dėl paskyros saugumo, prašome įvesti savo slaptažodį, kad<br> galėtume patvirtinti jūsų paskyra.</p>
-      <p class="smallText2">Slaptažodis</p>
-      <input class="input" type="text">
+      <p class="smallText">Dėl paskyros saugumo, prašome įvesti savo slaptažodį, kad<br> galėtume patvirtinti jūsų paskyrą.</p>
+      <p class="smallText2">Naudotojo vardas</p>
+      <p class="smallText3">Slaptažodis</p>
+      <input class="inputUser" type="text">
+      <input class="inputPass" type="text">
       <button class="submit">Patvirtinti</button>
     </div>
   </body>

